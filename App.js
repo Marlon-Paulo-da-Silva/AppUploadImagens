@@ -30,7 +30,9 @@ export default function Upload() {
       }
     }
 
-    const data = await ImagePicker.launchImageLibraryAsync({});
+    const data = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All
+    });
 
     if (data.cancelled) {
       return;
