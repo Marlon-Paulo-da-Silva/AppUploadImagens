@@ -12,7 +12,36 @@ import fileUpload from "./assets/upload.png";
 export default function Upload() {
   const [avatar, setAvatar] = useState();
 
-  function imagePickerCall() {}
+  async function imagePickerCall() {
+    if (Constants.platform.ios) {
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+
+      if (status !== "granted") {
+        alert("Precisamos da permissão");
+        return;
+      }
+    }
+    if (Constants.platform.android) {
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+
+      if (status !== "granted") {
+        alert("Precisamos da permissão");
+        return;
+      }
+    }
+
+    const data = await ImagePicker.launchImageLibraryAsync({});
+
+    if (data.cancelled) {
+      return;
+    }
+
+    if (!data.uri) {
+      return;
+    }
+
+    setAvatar(data);
+  }
 
   async function uploadImage() {
     const data = new FormData();
@@ -40,7 +69,9 @@ export default function Upload() {
           source={fileSearch}
           style={{ width: 30, height: 30, marginRight: 10, marginLeft: 13 }}
         />
-        <Text style={styles.buttonText}>Escolher Imagem</Text>
+        <Text style={styles.buttonText} onPress={imagePickerCall}>
+          Escolher Imagem
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Image
