@@ -13,7 +13,7 @@ App para upload de images
 </p>
 
 <div align="center">
-  <img align="center" src="https://github.com/Marlon-Paulo-da-Silva/AppUploadImagens/blob/master/gig.gif" alt="demo" height="425">
+  <img align="center" src="https://github.com/Marlon-Paulo-da-Silva/AppUploadImagens/blob/master/gif.gif" alt="demo" height="425">
 
 </div>
 
@@ -32,3 +32,7 @@ Essa aplicação utiliza as mais atualizadas ferramentas para desenvolvimento Mo
 ## Licença
 
 Esse projeto está licenciado pela MIT License - veja a pagina de detalhes da [Licença](https://opensource.org/licenses/MIT).
+
+### Icones
+
+Este App utiliza icones <a target="_blank" href="https://icons8.com/icons/set/search-folder">Search Folder icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
